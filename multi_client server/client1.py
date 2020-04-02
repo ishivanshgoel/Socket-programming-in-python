@@ -1,12 +1,15 @@
 import socket
-s1=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s1.connect((socket.gethostname(),2002))
+s2=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s2.connect((socket.gethostname(),5000))
 
-# msg1=""
-
+msg=""
+print("*****************TRUCK 1 ACTIVE*************")
 while True:
-    while True:
-        if len(s1.recv(10))==0:
-            break
-        r=str(s1.recv(1024).decode('ascii'))
-    print(r)
+    k=s2.recv(1024).decode('ascii')
+    if(len(k)>0):
+        msg=msg+k
+    else:
+        break
+        
+print(msg)
+s2.close()
