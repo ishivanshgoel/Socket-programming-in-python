@@ -1,8 +1,6 @@
 ##server side
 import socket
-import _thread
-import threading
-import select
+
 
 """ Connect to clients one by one as instructed by program"""
 
